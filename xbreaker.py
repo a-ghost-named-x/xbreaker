@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Author: a-ghost-named-x
 import binascii
 
 ciphertext = input("Enter the ciphertext: ")
