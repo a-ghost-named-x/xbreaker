@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# Author: a-ghost-named-x
 import binascii
 
 ciphertext = input("Enter the ciphertext: ")
@@ -12,5 +11,9 @@ plaintext_bytes = bytearray()
 for i in range(len(ciphertext_bytes)):
     plaintext_bytes.append(ciphertext_bytes[i] ^ key_bytes[i % len(key_bytes)])
 
-plaintext = plaintext_bytes.decode()
+try:
+    plaintext = plaintext_bytes.decode('utf-8')
+except UnicodeDecodeError:
+    plaintext = plaintext_bytes.hex()
+
 print("Plaintext:", plaintext)
